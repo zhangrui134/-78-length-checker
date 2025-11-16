@@ -49,6 +49,11 @@
             color: #2c3e50;
             font-weight: bold;
         }
+        .input-hint {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
         input {
             width: 100%;
             padding: 15px;
@@ -57,6 +62,13 @@
             font-size: 16px;
             margin-bottom: 10px;
             -webkit-appearance: none;
+            transition: all 0.3s ease;
+        }
+        input:valid {
+            border-color: #27ae60;
+        }
+        input:invalid {
+            border-color: #e74c3c;
         }
         button {
             width: 100%;
@@ -245,12 +257,18 @@
         
         <div class="input-group">
             <label>用户名：</label>
-            <input type="text" id="username" placeholder="请输入用户名" autocapitalize="off">
+            <input type="text" id="username" 
+                   placeholder="请输入用户名(2-10个字符)" 
+                   maxlength="10"
+                   required
+                   oninput="validateNameInput(this)">
+            <div class="input-hint">只能输入中文、英文、数字，不能包含特殊符号</div>
         </div>
         
         <div class="input-group">
             <label>身高（cm）：</label>
-            <input type="number" id="height" placeholder="请输入身高(100-250cm)" min="100" max="250" pattern="[0-9]*" inputmode="numeric">
+            <input type="number" id="height" placeholder="请输入身高(100-250cm)" min="100" max="250" pattern="[0-9]*" inputmode="numeric" required>
+            <div class="input-hint">请输入100-250之间的数字</div>
         </div>
         
         <button class="query-btn" onclick="calculateAndSave()">
@@ -302,6 +320,29 @@
     <script>
         const SUPABASE_URL = 'https://ryecnwmicmondyefflgb.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZWNud21pY21vbmR5ZWZmbGdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMDUxMDQsImV4cCI6MjA3ODc4MTEwNH0.xzspaXXU3ee-mWuoUA2VPA2k2n6oyXldU-B651fK5sc';
+        
+        // 验证用户名只能包含中文、英文、数字
+        function validateUsername(name) {
+            // 只允许中文、英文、数字，长度2-10个字符
+            const regex = /^[\u4e00-\u9fa5a-zA-Z0-9]{2,10}$/;
+            return regex.test(name);
+        }
+
+        // 实时验证输入
+        function validateNameInput(input) {
+            // 移除不允许的字符（特殊符号、空格等）
+            input.value = input.value.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, '');
+            
+            // 实时提示
+            const isValid = validateUsername(input.value);
+            if (input.value && !isValid) {
+                input.style.borderColor = '#e74c3c';
+                input.style.backgroundColor = '#fde8e8';
+            } else {
+                input.style.borderColor = input.value ? '#27ae60' : '#e9ecef';
+                input.style.backgroundColor = 'white';
+            }
+        }
         
         // 分享功能
         function shareApp() {
@@ -396,11 +437,18 @@
             const username = document.getElementById('username').value.trim();
             const height = parseFloat(document.getElementById('height').value);
             
+            // 用户名验证
             if (!username) {
                 alert('请输入用户名');
                 return;
             }
             
+            if (!validateUsername(username)) {
+                alert('用户名格式不正确！\n\n要求：\n• 只能包含中文、英文、数字\n• 长度2-10个字符\n• 不能包含特殊符号\n\n示例：张三、Alice、用户123');
+                return;
+            }
+            
+            // 身高验证
             if (!height || height < 100 || height > 250) {
                 alert('请输入正确的身高（100-250cm）');
                 return;
@@ -529,14 +577,14 @@
         // 每30秒自动刷新一次排行榜
         setInterval(loadRanking, 30000);
 
-        // 输入框实时验证
+        // 身高输入框实时验证
         document.getElementById('height').addEventListener('input', function() {
             const height = parseFloat(this.value);
             if (height && height < 105) {
                 this.style.borderColor = '#e74c3c';
                 this.style.backgroundColor = '#fde8e8';
             } else {
-                this.style.borderColor = '#e9ecef';
+                this.style.borderColor = this.value ? '#27ae60' : '#e9ecef';
                 this.style.backgroundColor = 'white';
             }
         });
