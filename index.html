@@ -39,23 +39,6 @@
             font-size: 16px;
             text-align: center;
         }
-        .security-notice {
-            background: #e8f6f3;
-            border: 2px solid #27ae60;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-        }
-        .security-text {
-            color: #27ae60;
-            font-weight: bold;
-        }
-        .name-examples {
-            font-size: 12px;
-            color: #7f8c8d;
-            margin-top: 5px;
-        }
         .input-group {
             margin-bottom: 20px;
             text-align: left;
@@ -70,24 +53,6 @@
             font-size: 12px;
             color: #7f8c8d;
             margin-top: 4px;
-        }
-        .name-available {
-            color: #27ae60;
-            font-size: 12px;
-            margin-top: 4px;
-            font-weight: bold;
-        }
-        .name-taken {
-            color: #e74c3c;
-            font-size: 12px;
-            margin-top: 4px;
-            font-weight: bold;
-        }
-        .name-checking {
-            color: #f39c12;
-            font-size: 12px;
-            margin-top: 4px;
-            font-weight: bold;
         }
         input {
             width: 100%;
@@ -118,10 +83,6 @@
         button:active {
             transform: scale(0.98);
         }
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
         .query-btn {
             background: #e74c3c;
         }
@@ -136,6 +97,12 @@
         }
         .admin-btn {
             background: #e67e22;
+        }
+        .delete-btn {
+            background: #e74c3c;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-top: 5px;
         }
         .result-box {
             margin-top: 25px;
@@ -242,11 +209,6 @@
             font-weight: bold;
             color: #e74c3c;
         }
-        .player-id {
-            font-size: 10px;
-            color: #95a5a6;
-            margin-top: 3px;
-        }
         .stats {
             text-align: center;
             margin: 15px 0;
@@ -273,122 +235,23 @@
             background: #f8f9fa;
             border-radius: 12px;
         }
-        .delete-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            font-size: 12px;
-            cursor: pointer;
-            display: none;
-        }
-        .rank-card:hover .delete-btn {
-            display: block;
-        }
-
-        /* 管理员悬浮球样式 */
-        .admin-float-ball {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-        .admin-float-ball:hover {
-            transform: scale(1.1);
-        }
-        .admin-float-ball.active {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        .admin-section {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 12px;
+            border: 2px solid #f39c12;
         }
         .admin-panel {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 200px;
-            background: white;
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-            z-index: 999;
             display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        .admin-panel.active {
-            display: block;
-        }
-        .admin-panel h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 16px;
-            text-align: center;
-        }
-        .admin-panel input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        .admin-panel button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 8px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .admin-panel .delete-all-btn {
-            background: #e74c3c;
-            color: white;
-        }
-        .admin-panel .toggle-delete-btn {
-            background: #3498db;
-            color: white;
-        }
-        .admin-panel .close-btn {
-            background: #95a5a6;
-            color: white;
-        }
-        .admin-status {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 10px;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .admin-status.active {
-            background: #e8f6f3;
-            color: #27ae60;
-        }
-        .admin-status.inactive {
-            background: #fde8e8;
-            color: #e74c3c;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* 手机优化 */
         @media (max-width: 480px) {
             body {
                 padding: 15px;
@@ -406,55 +269,23 @@
                 min-width: 110px;
                 padding: 12px;
             }
-            .admin-float-ball {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-                bottom: 15px;
-                right: 15px;
-            }
-            .admin-panel {
-                width: 180px;
-                bottom: 75px;
-                right: 15px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- 管理员悬浮球 -->
-    <div class="admin-float-ball" id="adminFloatBall">
-        ⚙️
-    </div>
-    
-    <!-- 管理员面板 -->
-    <div class="admin-panel" id="adminPanel">
-        <h3>管理员功能</h3>
-        <input type="password" id="adminPassword" placeholder="输入管理员密码">
-        <button class="toggle-delete-btn" onclick="toggleAdminMode()">进入管理模式</button>
-        <button class="delete-all-btn" onclick="deleteAllData()">清空所有数据</button>
-        <button class="close-btn" onclick="closeAdminPanel()">关闭面板</button>
-        <div class="admin-status inactive" id="adminStatus">未登录</div>
-    </div>
-
     <div class="container">
+        <!-- 计算区域 -->
         <h1>78长度查询器</h1>
         <div class="subtitle">测试你的78长度并查看排行榜</div>
-        
-        <div class="security-notice">
-            <div class="security-text">✅ 已加强安全防护 - 防止恶意输入</div>
-            <div class="name-examples">请使用真实姓名或常用昵称，禁止恶意捣乱</div>
-        </div>
         
         <div class="input-group">
             <label>用户名：</label>
             <input type="text" id="username" 
-                   placeholder="请输入真实姓名或常用昵称" 
+                   placeholder="请输入用户名(2-10个字符)" 
                    maxlength="10"
                    required
                    oninput="validateNameInput(this)">
-            <div class="input-hint">只能输入中文、英文、数字，2-10个字符</div>
-            <div id="nameStatus"></div>
+            <div class="input-hint">只能输入中文、英文、数字，不能包含特殊符号</div>
         </div>
         
         <div class="input-group">
@@ -479,6 +310,22 @@
             <div id="rankInfo" style="margin-top: 10px;"></div>
         </div>
 
+        <!-- 管理员区域 -->
+        <div class="admin-section">
+            <h4>管理员功能</h4>
+            <button class="admin-btn" onclick="toggleAdminPanel()">
+                🔧 管理员面板
+            </button>
+            <div class="admin-panel" id="adminPanel">
+                <input type="password" id="adminPassword" placeholder="输入管理员密码" style="margin-bottom: 10px;">
+                <button onclick="verifyAdmin()" style="background: #e67e22;">验证管理员</button>
+                <div id="adminControls" style="display: none; margin-top: 10px;">
+                    <p>管理员模式已开启</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分享区域 -->
         <div class="share-section">
             <h4>分享给朋友</h4>
             <button class="share-btn" onclick="shareApp()">
@@ -486,6 +333,7 @@
             </button>
         </div>
 
+        <!-- 排行榜区域 -->
         <div class="ranking-section" id="rankingSection">
             <h2 style="text-align:center; color:#2c3e50; margin-bottom:20px;">🏆 好友排行榜</h2>
             
@@ -511,136 +359,129 @@
         const SUPABASE_URL = 'https://ryecnwmicmondyefflgb.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZWNud21pY21vbmR5ZWZmbGdiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMDUxMDQsImV4cCI6MjA3ODc4MTEwNH0.xzspaXXU3ee-mWuoUA2VPA2k2n6oyXldU-B651fK5sc';
         
-        let usernameCheckTimeout;
-        let lastSubmitTime = 0;
-        let isAdminMode = false;
-        const ADMIN_PASSWORD = "850611@QQ.com";
+        const ADMIN_PASSWORD = '850611';
+        let isAdmin = false;
 
-        // 用户提交记录 - 防刷榜
-        const userSubmissionCache = new Map();
-
-        function generateUserId() {
-            return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
-        }
-
+        // 严格的人名验证
         function validateRealName(name) {
-            if (name.length < 2) return { valid: false, message: '用户名至少需要2个字符' };
-            
+            // 基础验证：中文、英文、数字，2-10字符
             const basicRegex = /^[\u4e00-\u9fa5a-zA-Z0-9]{2,10}$/;
-            if (!basicRegex.test(name)) return { valid: false, message: '只能包含中文、英文、数字' };
+            if (!basicRegex.test(name)) {
+                return { valid: false, message: '用户名只能包含中文、英文、数字，长度2-10个字符' };
+            }
             
+            // 防止无意义重复字符（同一个字符重复3次以上）
             const repeatRegex = /(.)\1{2,}/;
-            if (repeatRegex.test(name)) return { valid: false, message: '不能包含重复字符' };
+            if (repeatRegex.test(name)) {
+                return { valid: false, message: '用户名不能包含重复字符' };
+            }
             
+            // 防止纯数字
             const onlyNumbers = /^\d+$/;
-            if (onlyNumbers.test(name)) return { valid: false, message: '不能是纯数字' };
+            if (onlyNumbers.test(name)) {
+                return { valid: false, message: '用户名不能是纯数字' };
+            }
             
-            const hasLetter = /[\u4e00-\u9fa5a-zA-Z]/;
-            if (!hasLetter.test(name)) return { valid: false, message: '必须包含中文或英文字母' };
-            
-            const badWords = ['admin','test','aaa','111','123','abc','xxx','qqq','www','asd','qwe','zxc','123456','000','666','888','999','test1','test2','user','user1','aaa123','abc123','一二三','测试','试验','实验','捣乱','破坏','垃圾','废物','傻子','笨蛋','sb','fuck','shit','bitch','asshole','idiot','stupid'];
+            // 常见捣乱词汇过滤
+            const badWords = ['admin', 'test', 'aaa', '111', '123', 'abc', 'xxx', 'qqq', 'www', 'asd', 'qwe', 'zxc', '123456', '000', '666', '888'];
             const lowerName = name.toLowerCase();
-            if (badWords.some(word => lowerName === word || lowerName.includes(word))) {
-                return { valid: false, message: '请使用真实姓名或常用昵称' };
+            if (badWords.some(word => lowerName === word)) {
+                return { valid: false, message: '请使用合适的用户名' };
+            }
+            
+            // 必须包含至少一个中文或英文字母
+            const hasLetter = /[\u4e00-\u9fa5a-zA-Z]/;
+            if (!hasLetter.test(name)) {
+                return { valid: false, message: '用户名必须包含中文或英文字母' };
             }
             
             return { valid: true, message: '' };
         }
 
-        // 检查用户当日提交次数
-        function checkUserDailyLimit(username) {
-            const today = new Date().toDateString();
-            const userKey = `${username}_${today}`;
-            
-            const userData = userSubmissionCache.get(userKey) || { count: 0, date: today };
-            
-            // 清理过期的记录
-            if (userData.date !== today) {
-                userData.count = 0;
-                userData.date = today;
-            }
-            
-            if (userData.count >= 3) {
-                return false;
-            }
-            
-            userData.count++;
-            userSubmissionCache.set(userKey, userData);
-            
-            // 清理缓存（防止内存泄漏）
-            if (userSubmissionCache.size > 1000) {
-                const keys = Array.from(userSubmissionCache.keys());
-                keys.slice(0, 500).forEach(key => userSubmissionCache.delete(key));
-            }
-            
-            return true;
-        }
-
-        // 检测重复数据
-        async function detectDuplicateData(username, score) {
-            try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/game_scores?player_name=eq.${encodeURIComponent(username)}&score=eq.${score}&select=id`, {
-                    headers: { 'apikey': SUPABASE_KEY }
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    return data.length > 0;
-                }
-            } catch (error) {
-                console.error('检测重复数据失败:', error);
-            }
-            return false;
-        }
-
-        // 用户级频率控制
-        const userCooldown = new Map();
-        function checkUserCooldown(username) {
-            const now = Date.now();
-            const lastTime = userCooldown.get(username) || 0;
-            
-            if (now - lastTime < 60000) {
-                const remaining = Math.ceil((60000 - (now - lastTime)) / 1000);
-                alert(`操作过于频繁，请${remaining}秒后再试`);
-                return false;
-            }
-            
-            userCooldown.set(username, now);
-            return true;
-        }
-
+        // 实时验证输入
         function validateNameInput(input) {
             const name = input.value.trim();
-            const nameStatus = document.getElementById('nameStatus');
             
-            clearTimeout(usernameCheckTimeout);
+            // 移除不允许的字符
             input.value = input.value.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, '');
             
             if (name.length === 0) {
-                nameStatus.innerHTML = '';
                 input.style.borderColor = '#e9ecef';
                 input.style.backgroundColor = 'white';
                 return;
             }
             
+            // 实时格式验证
             const validation = validateRealName(name);
             if (!validation.valid) {
-                nameStatus.innerHTML = `<div class="name-taken">${validation.message}</div>`;
                 input.style.borderColor = '#e74c3c';
                 input.style.backgroundColor = '#fde8e8';
+            } else {
+                input.style.borderColor = '#27ae60';
+                input.style.backgroundColor = '#e8f6f3';
+            }
+        }
+        
+        // 管理员功能
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function verifyAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                document.getElementById('adminControls').style.display = 'block';
+                document.getElementById('adminPassword').value = '';
+                alert('管理员验证成功！');
+                loadRanking(); // 重新加载排行榜显示删除按钮
+            } else {
+                alert('密码错误！');
+            }
+        }
+
+        // 删除记录
+        async function deleteRecord(recordId, playerName) {
+            if (!isAdmin) {
+                alert('请先验证管理员权限！');
                 return;
             }
             
-            nameStatus.innerHTML = '<div class="name-available">✅ 用户名可用</div>';
-            input.style.borderColor = '#27ae60';
-            input.style.backgroundColor = '#e8f6f3';
+            if (!confirm(`确定要删除 ${playerName} 的记录吗？`)) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/game_scores?id=eq.${recordId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('删除成功！');
+                    loadRanking();
+                } else {
+                    alert('删除失败');
+                }
+            } catch (error) {
+                alert('网络错误');
+            }
         }
-
+        
+        // 分享功能
         function shareApp() {
             const url = window.location.href;
             const title = '78长度查询器 - 快来测试你的78长度！';
             
             if (navigator.share) {
-                navigator.share({ title: title, url: url });
+                navigator.share({
+                    title: title,
+                    url: url
+                });
             } else {
                 navigator.clipboard.writeText(url).then(() => {
                     alert('链接已复制！\n\n分享给朋友：' + url);
@@ -648,44 +489,83 @@
             }
         }
         
+        // 滚动到排行榜位置
         function scrollToRanking() {
-            document.getElementById('rankingSection').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('rankingSection').scrollIntoView({
+                behavior: 'smooth'
+            });
             loadRanking();
         }
         
+        // 滚动到顶部
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
+        // 科学计算78长度
         function calculateLength(height) {
             let result = ((height - 105) * 0.618 / 3.14);
-            if (result < 0) return null;
+            
+            if (result < 0) {
+                return null;
+            }
+            
             return result.toFixed(2);
         }
 
+        // 根据长度获取尺寸提示
         function getSizeTip(length) {
-            if (length === null) return { text: '❌ 计算错误：请输入合理的身高(105cm以上)', class: 'tip-error' };
+            if (length === null) {
+                return { 
+                    text: '❌ 计算错误：请输入合理的身高(105cm以上)', 
+                    class: 'tip-error' 
+                };
+            }
             
             const numLength = parseFloat(length);
-            if (numLength < 5) return { text: '💎 迷你尺寸，超级可爱！', class: 'tip-small' };
-            else if (numLength < 10) return { text: '✨ 小巧精致，独具魅力！', class: 'tip-small' };
-            else if (numLength < 15) return { text: '⭐ 标准尺寸，恰到好处！', class: 'tip-medium' };
-            else if (numLength < 20) return { text: '🔥 雄伟壮观，气势非凡！', class: 'tip-medium' };
-            else if (numLength < 50) return { text: '🚀 超级尺寸，震撼全场！', class: 'tip-large' };
-            else return { text: '⚠️ 警告！检测到超出人类理解范围的超级长度！', class: 'tip-large' };
+            
+            if (numLength < 5) {
+                return { 
+                    text: '💎 迷你尺寸，超级可爱！', 
+                    class: 'tip-small' 
+                };
+            } else if (numLength < 10) {
+                return { 
+                    text: '✨ 小巧精致，独具魅力！', 
+                    class: 'tip-small' 
+                };
+            } else if (numLength < 15) {
+                return { 
+                    text: '⭐ 标准尺寸，恰到好处！', 
+                    class: 'tip-medium' 
+                };
+            } else if (numLength < 20) {
+                return { 
+                    text: '🔥 雄伟壮观，气势非凡！', 
+                    class: 'tip-medium' 
+                };
+            } else if (numLength < 50) {
+                return { 
+                    text: '🚀 超级尺寸，震撼全场！', 
+                    class: 'tip-large' 
+                };
+            } else {
+                return { 
+                    text: '⚠️ 警告！检测到超出人类理解范围的超级长度！', 
+                    class: 'tip-large' 
+                };
+            }
         }
 
+        // 计算并保存到云端
         async function calculateAndSave() {
-            const now = Date.now();
-            if (now - lastSubmitTime < 3000) {
-                alert('操作过于频繁，请稍后再试');
-                return;
-            }
-            lastSubmitTime = now;
-
             const username = document.getElementById('username').value.trim();
             const height = parseFloat(document.getElementById('height').value);
             
+            // 严格的用户名验证
             if (!username) {
                 alert('请输入用户名');
                 return;
@@ -693,51 +573,35 @@
             
             const validation = validateRealName(username);
             if (!validation.valid) {
-                alert('用户名验证失败：\n' + validation.message + '\n\n请使用真实姓名或常用昵称');
+                alert(validation.message);
                 return;
             }
             
+            // 身高验证
             if (!height || height < 100 || height > 250) {
                 alert('请输入正确的身高（100-250cm）');
                 return;
             }
             
-            // === 新增防护检测 ===
-            if (!checkUserDailyLimit(username)) {
-                alert('每个用户每天最多提交3次！');
+            const length = calculateLength(height);
+            
+            if (length === null) {
+                document.getElementById('lengthDisplay').textContent = '错误';
+                document.getElementById('sizeTip').textContent = '❌ 请输入105cm以上的身高';
+                document.getElementById('sizeTip').className = 'size-tip tip-error';
+                document.getElementById('rankInfo').innerHTML = '';
+                alert('❌ 计算错误：请输入105cm以上的身高');
                 return;
             }
             
-            if (!checkUserCooldown(username)) {
-                return;
-            }
+            document.getElementById('lengthDisplay').textContent = length;
             
-            const queryBtn = document.querySelector('.query-btn');
-            const originalText = queryBtn.textContent;
-            queryBtn.textContent = '提交中...';
-            queryBtn.disabled = true;
+            const sizeTip = getSizeTip(length);
+            const sizeTipElement = document.getElementById('sizeTip');
+            sizeTipElement.textContent = sizeTip.text;
+            sizeTipElement.className = 'size-tip ' + sizeTip.class;
             
             try {
-                const length = calculateLength(height);
-                if (length === null) {
-                    alert('❌ 计算错误：请输入105cm以上的身高');
-                    return;
-                }
-                
-                // 检测重复数据
-                if (await detectDuplicateData(username, parseFloat(length))) {
-                    alert('请勿重复提交相同数据！');
-                    return;
-                }
-                
-                document.getElementById('lengthDisplay').textContent = length;
-                const sizeTip = getSizeTip(length);
-                const sizeTipElement = document.getElementById('sizeTip');
-                sizeTipElement.textContent = sizeTip.text;
-                sizeTipElement.className = 'size-tip ' + sizeTip.class;
-                
-                const userId = generateUserId();
-                
                 const response = await fetch(SUPABASE_URL + '/rest/v1/game_scores', {
                     method: 'POST',
                     headers: {
@@ -746,14 +610,16 @@
                     },
                     body: JSON.stringify({
                         player_name: username,
-                        score: parseFloat(length),
-                        user_id: userId
+                        score: parseFloat(length)
                     })
                 });
                 
                 if (response.ok) {
                     const rankingData = await getRankingData();
-                    const userRank = rankingData.findIndex(item => item.user_id === userId) + 1;
+                    // 由于允许同名，需要找到确切的记录
+                    const userRecords = rankingData.filter(item => item.player_name === username);
+                    const userRecord = userRecords.find(item => item.score === parseFloat(length)) || userRecords[0];
+                    const userRank = rankingData.findIndex(item => item.id === userRecord.id) + 1;
                     const totalPlayers = rankingData.length;
                     const percentage = totalPlayers > 0 ? Math.round(((totalPlayers - userRank) / totalPlayers) * 1000) / 10 : 0;
                     
@@ -767,68 +633,37 @@
                     alert(`🎉 保存成功！\n${username}：${length}cm\n排名：第${userRank}名`);
                     scrollToRanking();
                 } else {
-                    const error = await response.text();
-                    if (error.includes('duplicate key')) {
-                        alert('保存失败，请重试');
-                    } else if (error.includes('check constraint')) {
-                        alert('用户名不符合要求，请使用真实姓名或常用昵称');
-                    } else {
-                        alert('保存失败，请重试');
-                    }
+                    alert('保存失败，但计算完成');
                 }
             } catch (error) {
-                alert('网络错误，请重试');
-            } finally {
-                queryBtn.textContent = originalText;
-                queryBtn.disabled = false;
+                alert('网络错误，但计算完成');
             }
         }
 
+        // 获取排行榜数据
         async function getRankingData() {
             try {
-                const response = await fetch(SUPABASE_URL + '/rest/v1/game_scores?select=player_name,score,id,user_id&order=score.desc', {
-                    headers: { 'apikey': SUPABASE_KEY }
-                });
-                if (response.ok) return await response.json();
-            } catch (error) {
-                console.error('获取排行榜数据失败:', error);
-            }
-            return [];
-        }
-
-        function showPlayerDetail(playerName, score, rank, userId) {
-            alert(`👤 ${playerName}\n🏆 第${rank}名\n📏 ${score}cm\n🆔 ${userId}`);
-        }
-
-        async function deletePlayerRecord(id, playerName) {
-            if (!isAdminMode) {
-                alert('请先进入管理员模式');
-                return;
-            }
-            
-            if (!confirm(`确定要删除 ${playerName} 的记录吗？`)) {
-                return;
-            }
-            
-            try {
-                const response = await fetch(SUPABASE_URL + '/rest/v1/game_scores?id=eq.' + id, {
-                    method: 'DELETE',
+                const response = await fetch(SUPABASE_URL + '/rest/v1/game_scores?select=id,player_name,score,created_at&order=score.desc', {
                     headers: {
                         'apikey': SUPABASE_KEY
                     }
                 });
                 
                 if (response.ok) {
-                    alert('删除成功');
-                    loadRanking();
-                } else {
-                    alert('删除失败');
+                    return await response.json();
                 }
             } catch (error) {
-                alert('网络错误，请重试');
+                console.error('获取排行榜数据失败:', error);
             }
+            return [];
         }
 
+        // 显示玩家详情
+        function showPlayerDetail(playerName, score, rank, recordId) {
+            alert(`👤 ${playerName}\n🏆 第${rank}名\n📏 ${score}cm\n🆔 记录ID: ${recordId}`);
+        }
+
+        // 加载排行榜
         async function loadRanking() {
             const rankingList = document.getElementById('rankingList');
             const stats = document.getElementById('stats');
@@ -838,6 +673,7 @@
             
             try {
                 const data = await getRankingData();
+                
                 stats.innerHTML = `共 ${data.length} 人参与 • 最高记录: ${data.length > 0 ? data[0].score + 'cm' : '暂无'}`;
                 
                 if (data.length > 0) {
@@ -845,15 +681,16 @@
                     data.forEach((item, index) => {
                         const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
                         const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
+                        
                         html += `
-                            <div class="rank-card ${rankClass}" onclick="showPlayerDetail('${item.player_name}', ${item.score}, ${index + 1}, '${item.user_id}')">
-                                ${isAdminMode ? `<button class="delete-btn" onclick="event.stopPropagation(); deletePlayerRecord('${item.id}', '${item.player_name}')">×</button>` : ''}
+                            <div class="rank-card ${rankClass}" onclick="showPlayerDetail('${item.player_name}', ${item.score}, ${index + 1}, '${item.id}')">
                                 <div class="rank-medal">${medal}</div>
                                 <div class="rank-number">第${index + 1}名</div>
                                 <div class="player-name">${item.player_name}</div>
                                 <div class="player-score">${item.score}cm</div>
-                                <div class="player-id">ID: ${item.user_id.substring(0, 8)}</div>
-                            </div>`;
+                                ${isAdmin ? `<button class="delete-btn" onclick="event.stopPropagation(); deleteRecord('${item.id}', '${item.player_name}')">删除</button>` : ''}
+                            </div>
+                        `;
                     });
                     rankingList.innerHTML = html;
                 } else {
@@ -865,48 +702,31 @@
             }
         }
 
-        // 管理员面板功能
-        function toggleAdminPanel() {
-            const panel = document.getElementById('adminPanel');
-            const ball = document.getElementById('adminFloatBall');
-            
-            if (panel.classList.contains('active')) {
-                panel.classList.remove('active');
-                ball.classList.remove('active');
-            } else {
-                panel.classList.add('active');
-                ball.classList.add('active');
-            }
-        }
+        // 页面加载时自动加载排行榜
+        window.onload = function() {
+            loadRanking();
+        };
 
-        function closeAdminPanel() {
-            document.getElementById('adminPanel').classList.remove('active');
-            document.getElementById('adminFloatBall').classList.remove('active');
-        }
+        // 每30秒自动刷新一次排行榜
+        setInterval(loadRanking, 30000);
 
-        function toggleAdminMode() {
-            const password = document.getElementById('adminPassword').value;
-            const status = document.getElementById('adminStatus');
-            
-            if (!isAdminMode) {
-                if (password === ADMIN_PASSWORD) {
-                    isAdminMode = true;
-                    status.textContent = '已登录 - 单个删除模式已开启';
-                    status.className = 'admin-status active';
-                    document.getElementById('adminPassword').value = '';
-                    alert('已进入管理员模式，现在可以删除单个记录了');
-                    loadRanking();
-                } else {
-                    alert('密码错误');
-                }
+        // 身高输入框实时验证
+        document.getElementById('height').addEventListener('input', function() {
+            const height = parseFloat(this.value);
+            if (height && height < 105) {
+                this.style.borderColor = '#e74c3c';
+                this.style.backgroundColor = '#fde8e8';
             } else {
-                isAdminMode = false;
-                status.textContent = '未登录';
-                status.className = 'admin-status inactive';
-                alert('已退出管理员模式');
-                loadRanking();
+                this.style.borderColor = this.value ? '#27ae60' : '#e9ecef';
+                this.style.backgroundColor = 'white';
             }
-        }
+        });
+        
+        // 防止手机缩放
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
 
         async function deleteAllData() {
             if (!isAdminMode) {
